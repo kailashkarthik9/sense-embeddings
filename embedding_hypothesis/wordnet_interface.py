@@ -40,6 +40,15 @@ class WordNetInterface:
         return synset.name()
 
     @staticmethod
+    def get_synset_by_id(id: str):
+        """
+        This method gets the synset given an id
+        :param id: The id for which the synset is to be retrieved
+        :return: The Synset object
+        """
+        return wordnet.synset(id)
+
+    @staticmethod
     def get_synset_pos(synset):
         """
         This method retrieves the part of speech associated with the synset
@@ -65,6 +74,14 @@ class WordNetInterface:
         :return: A list of words composing the synset
         """
         return [lemma.name() for lemma in synset.lemmas()]
+
+    @staticmethod
+    def get_vocabulary():
+        """
+        This method returns the vocabulary of wordnet
+        :return: List of words in the wordnet vocabulary
+        """
+        return sorted(wordnet.words())
 
 
 if __name__ == '__main__':

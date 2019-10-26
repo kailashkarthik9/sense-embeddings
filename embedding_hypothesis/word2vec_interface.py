@@ -29,3 +29,10 @@ class Word2VecInterface:
         :return: N dimensional vector
         """
         return self.model[word]
+
+    def get_vocabulary(self):
+        """
+        This method returns the vocabulary of the word2vec model
+        :return: A list of words in the vocabulary
+        """
+        return sorted(self.model.vocab)
