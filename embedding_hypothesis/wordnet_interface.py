@@ -31,7 +31,15 @@ class WordNetInterface:
         return wordnet.synsets(word)
 
     @staticmethod
-    def get_synset_id(synset: wordnet.Synset):
+    def get_all_synsets():
+        """
+        This method gets all the synsets in wordnet
+        :return: List of all synsets from WordNet
+        """
+        return list(wordnet.all_synsets())
+
+    @staticmethod
+    def get_synset_id(synset: object):
         """
         This method gets a unique identifier for a synset
         :param synset: The synset whose identifier is to be retrieved
